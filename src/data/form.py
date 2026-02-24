@@ -1,15 +1,16 @@
-class Facility:
-    TOKYO = "Tokyo CURA Healthcare Center"
-    HONGKONG = "Hongkong CURA Healthcare Center"
-    SEOUL = "Seoul CURA Healthcare Center"
+class AppointmentData:
+    # Facility
+    FACILITY_TOKYO = "Tokyo CURA Healthcare Center"
+    FACILITY_HONGKONG = "Hongkong CURA Healthcare Center"
+    FACILITY_SEOUL = "Seoul CURA Healthcare Center"
 
-class HealthProgram:
-    NONE = "None"
-    MEDICARE = "Medicare"
-    MEDICAID = "Medicaid"
+    # Health Program
+    PROGRAM_NONE = "None"
+    PROGRAM_MEDICARE = "Medicare"
+    PROGRAM_MEDICAID = "Medicaid"
 
-class VisitDate: 
-    DATE = "12/12/2025"
+    # Visit Date
+    VISIT_DATE = "12/12/2025"
 
-class Comment: 
-    TEXT = "The comment input field"
+    # Comment
+    COMMENT = "The comment input field"
