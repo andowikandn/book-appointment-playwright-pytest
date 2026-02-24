@@ -2,17 +2,18 @@ import allure
 from pages.login_pages import LoginPage
 from pages.appointment_pages import AppointmentPage
 from pages.sidebar_pages import SidebarPage
+from data.login import Username, Password
 
 @allure.title('User view sidebar menu')
-@allure.description('Do action sidebar menut')
+@allure.description('Do action sidebar menu')
 
 def test_sidebar_menu(browser):
     sidebar = SidebarPage(browser)
     login = LoginPage(browser)
     appointment = AppointmentPage(browser)
     appointment.tap_appointment_btn()
-    login.input_username('John Doe')
-    login.input_password('ThisIsNotAPassword')
+    login.input_username(Username.VALID)
+    login.input_password(Password.VALID)
     login.tap_login_btn()
     sidebar.tap_sidebar_menu()
     sidebar.verify_sidebar_menu()

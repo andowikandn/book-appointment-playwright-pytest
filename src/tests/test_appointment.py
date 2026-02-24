@@ -1,7 +1,10 @@
 import allure
+import json
 from pages.appointment_pages import AppointmentPage
 from pages.sidebar_pages import SidebarPage
 from pages.login_pages import LoginPage
+from data.login import Username, Password
+from data.form import Facility, HealthProgram, VisitDate, Comment
 
 @allure.title('User fill form book appointment')
 @allure.description('Do input appoinment program health care')
@@ -10,14 +13,14 @@ def test_input_book_appointment_form(browser):
     appointment = AppointmentPage(browser)
     login = LoginPage(browser)
     appointment.tap_appointment_btn()
-    login.input_username('John Doe')
-    login.input_password('ThisIsNotAPassword')
+    login.input_username(Username.VALID)
+    login.input_password(Password.VALID)
     login.tap_login_btn()
-    appointment.select_facility('Seoul CURA Healthcare Center')
+    appointment.select_facility(Facility.HONGKONG)
     appointment.checked_facility()
-    appointment.select_program_health('Medicaid')
-    appointment.input_visit_date('12/12/2025')
-    appointment.input_comment('The comment input text field')
+    appointment.select_program_health(HealthProgram.MEDICARE)
+    appointment.input_visit_date(VisitDate.DATE)
+    appointment.input_comment(Comment.TEXT)
     appointment.tap_book_appointment()
     appointment.verify_book_appointment()
 
