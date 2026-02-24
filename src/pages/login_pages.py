@@ -14,11 +14,11 @@ class LoginPage:
             expect(self.page).to_have_url('https://katalon-demo-cura.herokuapp.com/profile.php#login')
 
     def input_username(self, username: str):
-        with allure.step('User input username'):
+        with allure.step(f'User input username: {username}'):
             self.page.locator(LoginLocator.username_txt).fill(username)
             
     def input_password(self, password: str):
-        with allure.step('User input password'):
+        with allure.step(f'User input password: {password}'):
             self.page.locator(LoginLocator.password_txt).fill(password)
 
     def tap_login_btn(self):

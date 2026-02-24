@@ -21,7 +21,7 @@ class AppointmentPage:
             self.page.locator(AppointmentLocator.facility_option).select_option(label=facility_option)
     
     def checked_facility(self):
-        with allure.step('User checked facility'):
+        with allure.step(f'User checked facility checkbox'):
             self.page.locator(AppointmentLocator.checkbox_facility).check()
     
     def select_program_health(self, select_program: str):
